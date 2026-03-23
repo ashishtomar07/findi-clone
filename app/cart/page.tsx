@@ -91,10 +91,10 @@ export default function CartPage() {
                   </span>
                 </div>
                 <Link
-                  href="/products"
+                  href="/checkout"
                   className="inline-flex items-center justify-center py-3.5 px-8 font-semibold rounded-[30px] bg-[#D43F33] text-white shadow-[0_4px_14px_rgba(212,63,51,0.3)] hover:bg-[#b8352b] hover:-translate-y-0.5 transition-all"
                 >
-                  Continue Shopping
+                  Proceed to Checkout
                 </Link>
               </div>
             </div>
