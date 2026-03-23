@@ -1,0 +1,82 @@
+{
+  "products": [
+    {
+      "id": "prod_001",
+      "name": "mSwasth",
+      "slug": "mswasth",
+      "premium": 500,
+      "image": "/images/products/mswasth.png",
+      "shortDescription": "Comprehensive health insurance that covers hospitalisation, surgeries, and medical expenses up to ₹1,00,000.",
+      "description": "mSwasth is a comprehensive health insurance plan designed for individuals and families. It covers hospitalisation expenses, surgical procedures, and medical treatments up to ₹1,00,000.\n\nKey Benefits:\n• Cashless hospitalisation at network hospitals\n• Coverage for pre and post hospitalisation expenses\n• No medical check-up required\n• Instant policy issuance\n• Coverage for daycare procedures\n\nThis plan is ideal for individuals looking for affordable health coverage with essential benefits.",
+      "category": "Health",
+      "insurer": "Partner Insurance Co.",
+      "tenure": "year",
+      "active": true
+    },
+    {
+      "id": "prod_002",
+      "name": "Mobile Damage Protection",
+      "slug": "mobile-insurance",
+      "premium": 399,
+      "image": "/images/products/mobile-insurance.png",
+      "shortDescription": "Protect your smartphone against accidental damage, screen breakage, and theft with coverage up to ₹15,000.",
+      "description": "Mobile Damage Protection provides comprehensive coverage for your smartphone against unexpected damages and incidents.\n\nKey Benefits:\n• Accidental damage coverage\n• Screen breakage protection\n• Theft protection\n• Coverage up to ₹15,000\n• Easy claim process\n• Pan-India service network\n\nPerfect for smartphone users who want peace of mind against accidental damage and theft.",
+      "category": "Gadget",
+      "insurer": "Partner Insurance Co.",
+      "tenure": "year",
+      "active": true
+    },
+    {
+      "id": "prod_003",
+      "name": "Cyber Protection",
+      "slug": "cyber-protection",
+      "premium": 299,
+      "image": "/images/products/cyber.png",
+      "shortDescription": "Secure your digital life against identity theft, online fraud, and cyber bullying with coverage up to ₹50,000.",
+      "description": "Cyber Protection insurance safeguards you against the growing threats of the digital world.\n\nKey Benefits:\n• Identity theft coverage\n• Online fraud protection\n• Cyber bullying coverage\n• Coverage up to ₹50,000\n• Legal expense coverage\n• 24/7 cyber helpline\n\nIn today's digital age, this plan provides essential protection against cyber threats and online fraud.",
+      "category": "Cyber",
+      "insurer": "Partner Insurance Co.",
+      "tenure": "year",
+      "active": true
+    },
+    {
+      "id": "prod_004",
+      "name": "Personal Accident Cover",
+      "slug": "personal-accident",
+      "premium": 399,
+      "image": "/images/products/personal-accident.png",
+      "shortDescription": "Financial protection against accidental injuries, disability, and death with coverage up to ₹2,00,000.",
+      "description": "Personal Accident Cover provides financial protection to you and your family in case of accidental injuries.\n\nKey Benefits:\n• Accidental death benefit\n• Permanent disability coverage\n• Temporary disability coverage\n• Coverage up to ₹2,00,000\n• No medical check-up required\n• Instant policy issuance\n\nThis plan ensures your family's financial security in case of unfortunate accidents.",
+      "category": "Accident",
+      "insurer": "Partner Insurance Co.",
+      "tenure": "year",
+      "active": true
+    },
+    {
+      "id": "prod_005",
+      "name": "Hospicash",
+      "slug": "hospicash",
+      "premium": 349,
+      "image": "/images/products/hospicash.png",
+      "shortDescription": "Daily cash benefit during hospitalisation to cover incidental expenses up to ₹500/day.",
+      "description": "Hospicash provides daily cash benefits during hospitalisation to help cover incidental and out-of-pocket expenses.\n\nKey Benefits:\n• Daily cash benefit up to ₹500/day\n• No bills or receipts required\n• Covers incidental expenses\n• Complements existing health insurance\n• Easy claim process\n\nHospicash acts as a supplement to your existing health insurance by providing daily cash during hospital stays.",
+      "category": "Health",
+      "insurer": "Partner Insurance Co.",
+      "tenure": "year",
+      "active": true
+    },
+    {
+      "id": "prod_006",
+      "name": "Fire & Burglary Insurance",
+      "slug": "fire-burglary",
+      "premium": 599,
+      "image": "/images/products/fire-burglary.png",
+      "shortDescription": "Protect your home and belongings against fire, burglary, and natural disasters with coverage up to ₹5,00,000.",
+      "description": "Fire & Burglary Insurance provides comprehensive protection for your home and valuable belongings.\n\nKey Benefits:\n• Fire and allied perils coverage\n• Burglary and theft protection\n• Natural disaster coverage\n• Coverage up to ₹5,00,000\n• Personal belongings coverage\n• Easy and fast claim settlement\n\nSecure your home and possessions against unforeseen events with this comprehensive insurance plan.",
+      "category": "Home",
+      "insurer": "Partner Insurance Co.",
+      "tenure": "year",
+      "active": true
+    }
+  ]
+}
