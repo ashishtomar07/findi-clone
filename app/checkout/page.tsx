@@ -12,10 +12,11 @@ const INPUT_CLASS =
 interface FieldDef {
   name: string;
   label: string;
-  type: "text" | "tel" | "email" | "date";
+  type: "text" | "tel" | "email" | "date" | "select";
   placeholder: string;
   maxLength?: number;
   pattern?: string;
+  options?: { value: string; label: string }[];
 }
 
 const COMMON_FIELDS: FieldDef[] = [
@@ -36,7 +37,44 @@ const PRODUCT_FIELDS: Record<string, FieldDef[]> = {
   mswasth: [
     ...COMMON_FIELDS,
     { name: "dob", label: "Date of Birth", type: "date", placeholder: "dd-mm-yyyy" },
+    { name: "gender", label: "Gender", type: "select", placeholder: "Select Gender", options: [
+      { value: "male", label: "Male" },
+      { value: "female", label: "Female" },
+      { value: "others", label: "Others" },
+    ] },
     { name: "pincode", label: "Pincode", type: "text", placeholder: "Pincode", maxLength: 6, pattern: "[0-9]{6}" },
+    { name: "address", label: "Address", type: "text", placeholder: "Address" },
+    { name: "state", label: "State", type: "select", placeholder: "Select State", options: [
+      { value: "Andhra Pradesh", label: "Andhra Pradesh" },
+      { value: "Arunachal Pradesh", label: "Arunachal Pradesh" },
+      { value: "Assam", label: "Assam" },
+      { value: "Bihar", label: "Bihar" },
+      { value: "Chhattisgarh", label: "Chhattisgarh" },
+      { value: "Delhi", label: "Delhi" },
+      { value: "Goa", label: "Goa" },
+      { value: "Gujarat", label: "Gujarat" },
+      { value: "Haryana", label: "Haryana" },
+      { value: "Himachal Pradesh", label: "Himachal Pradesh" },
+      { value: "Jharkhand", label: "Jharkhand" },
+      { value: "Karnataka", label: "Karnataka" },
+      { value: "Kerala", label: "Kerala" },
+      { value: "Madhya Pradesh", label: "Madhya Pradesh" },
+      { value: "Maharashtra", label: "Maharashtra" },
+      { value: "Manipur", label: "Manipur" },
+      { value: "Meghalaya", label: "Meghalaya" },
+      { value: "Mizoram", label: "Mizoram" },
+      { value: "Nagaland", label: "Nagaland" },
+      { value: "Odisha", label: "Odisha" },
+      { value: "Punjab", label: "Punjab" },
+      { value: "Rajasthan", label: "Rajasthan" },
+      { value: "Sikkim", label: "Sikkim" },
+      { value: "Tamil Nadu", label: "Tamil Nadu" },
+      { value: "Telangana", label: "Telangana" },
+      { value: "Tripura", label: "Tripura" },
+      { value: "Uttar Pradesh", label: "Uttar Pradesh" },
+      { value: "Uttarakhand", label: "Uttarakhand" },
+      { value: "West Bengal", label: "West Bengal" },
+    ] },
   ],
   // Cyber Protection
   "cyber-protection": [
@@ -234,17 +272,32 @@ function ProductForm({
             <label className="text-[0.9rem] font-semibold text-[#1A1F2B]">
               {f.label} <span className="text-[#D43F33] ml-0.5">*</span>
             </label>
-            <input
-              type={f.type}
-              name={f.name}
-              value={values[f.name] ?? ""}
-              onChange={(e) => onChange(f.name, e.target.value)}
-              required
-              placeholder={f.placeholder}
-              maxLength={f.maxLength}
-              pattern={f.pattern}
-              className={INPUT_CLASS}
-            />
+            {f.type === "select" ? (
+              <select
+                name={f.name}
+                value={values[f.name] ?? ""}
+                onChange={(e) => onChange(f.name, e.target.value)}
+                required
+                className={`${INPUT_CLASS} appearance-none bg-[url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23666%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-no-repeat bg-[right_12px_center] bg-[length:18px] pr-10`}
+              >
+                <option value="">{f.placeholder}</option>
+                {f.options?.map((opt) => (
+                  <option key={opt.value} value={opt.value}>{opt.label}</option>
+                ))}
+              </select>
+            ) : (
+              <input
+                type={f.type}
+                name={f.name}
+                value={values[f.name] ?? ""}
+                onChange={(e) => onChange(f.name, e.target.value)}
+                required
+                placeholder={f.placeholder}
+                maxLength={f.maxLength}
+                pattern={f.pattern}
+                className={INPUT_CLASS}
+              />
+            )}
           </div>
         ))}
       </div>

@@ -13,6 +13,8 @@ interface Product {
   shortDescription: string;
 }
 
+const COMING_SOON_SLUGS = ["mobile-insurance", "cyber-protection"];
+
 export default function ProductCard({ product }: { product: Product }) {
   const { addToCart } = useCart();
 
@@ -46,23 +48,32 @@ export default function ProductCard({ product }: { product: Product }) {
 
         {/* Actions */}
         <div className="flex gap-2.5 mt-auto max-md:flex-col">
-          <Link
-            href={`/products/${product.slug}`}
-            className="flex-1 inline-flex items-center justify-center py-3 px-1.5 text-[0.85rem] font-semibold rounded-[30px] border-2 border-[#1C3C5F] text-[#1C3C5F] hover:bg-[#1C3C5F] hover:text-white hover:-translate-y-0.5 transition-all text-center"
-          >
-            View Details
-          </Link>
-          <button
-            onClick={() =>
-              addToCart(
-                { id: product.id, name: product.name, premium: product.premium, slug: product.slug },
-                true
-              )
-            }
-            className="flex-1 inline-flex items-center justify-center py-3 px-1.5 text-[0.85rem] font-semibold rounded-[30px] bg-[#D43F33] text-white shadow-[0_4px_14px_rgba(212,63,51,0.3)] hover:bg-[#b8352b] hover:-translate-y-0.5 transition-all"
-          >
-            Buy Now
-          </button>
+          {COMING_SOON_SLUGS.includes(product.slug) ? (
+            <span className="flex-1 inline-flex items-center justify-center py-3 px-1.5 text-[0.85rem] font-semibold rounded-[30px] bg-[#E0E4EA] text-[#8A94A6] cursor-not-allowed select-none text-center">
+              Coming Soon
+            </span>
+          ) : (
+            /* Active product buttons */
+            <>
+              <Link
+                href={`/products/${product.slug}`}
+                className="flex-1 inline-flex items-center justify-center py-3 px-1.5 text-[0.85rem] font-semibold rounded-[30px] border-2 border-[#1C3C5F] text-[#1C3C5F] hover:bg-[#1C3C5F] hover:text-white hover:-translate-y-0.5 transition-all text-center"
+              >
+                View Details
+              </Link>
+              <button
+                onClick={() =>
+                  addToCart(
+                    { id: product.id, name: product.name, premium: product.premium, slug: product.slug },
+                    true
+                  )
+                }
+                className="flex-1 inline-flex items-center justify-center py-3 px-1.5 text-[0.85rem] font-semibold rounded-[30px] bg-[#D43F33] text-white shadow-[0_4px_14px_rgba(212,63,51,0.3)] hover:bg-[#b8352b] hover:-translate-y-0.5 transition-all"
+              >
+                Buy Now
+              </button>
+            </>
+          )}
         </div>
       </div>
     </div>
